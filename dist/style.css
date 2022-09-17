@@ -1,0 +1,41 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("./images/pizzaunsplash.jpg");
+    background-size: cover;
+    color: white;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+header ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    list-style-type: none;
+    font-size: 2rem;
+}
+
+header a {
+    color: white;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}

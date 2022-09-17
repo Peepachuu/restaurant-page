@@ -18,9 +18,9 @@ function loadHeader() {
 
     heading.textContent = "Rossini";
     // Load up children in 
-    createNavbarChild("home");
-    createNavbarChild("menu");
-    createNavbarChild("contact");
+    createNavbarChild("Home");
+    createNavbarChild("Menu");
+    createNavbarChild("Contact");
 }
 
 function createNavbarChild(name) {
@@ -29,14 +29,19 @@ function createNavbarChild(name) {
     const navbarElement = document.createElement("li");
     const navLink = document.createElement("a");
     navLink.textContent = name;
+    navLink.href = "";
     navbarElement.appendChild(navLink);
     navbar.appendChild(navbarElement);
 }
 
 function loadBody() {
-
+    
 }
 
 function loadFooter() {
+    const content = document.querySelector("#content");
+    const footer = document.createElement("footer");
+    footer.textContent = "Copyright © Peepachu";
 
+    content.appendChild(footer);
 }
