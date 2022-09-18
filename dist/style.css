@@ -42,7 +42,7 @@ header {
 
 h1 {
     font-size: 4rem;
-    padding: 8px;
+    padding: 12px;
     margin-left: 12px;
 }
 
@@ -51,11 +51,11 @@ header ul {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     list-style-type: none;
-    font-size: 2rem;
 }
 
-header a {
+header button {
     color: white;
+    font-size: 2rem;
 }
 
 footer {

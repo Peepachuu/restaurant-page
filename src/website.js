@@ -1,3 +1,7 @@
+import { loadContact } from "./contact.js";
+import { loadHomePage } from "./home.js";
+import { loadMenu } from "./menu.js";
+
 export function loadMainContent() {
     loadHeader();
     loadBody();
@@ -21,15 +25,15 @@ function loadHeader() {
     createNavbarChild("Home");
     createNavbarChild("Menu");
     createNavbarChild("Contact");
+    setLinks();
 }
 
 function createNavbarChild(name) {
     const navbar = document.querySelector("ul");
-    console.log(navbar);
     const navbarElement = document.createElement("li");
-    const navLink = document.createElement("a");
+    const navLink = document.createElement("button");
+    navLink.classList.add(name);
     navLink.textContent = name;
-    navLink.href = "";
     navbarElement.appendChild(navLink);
     navbar.appendChild(navbarElement);
 }
@@ -37,13 +41,9 @@ function createNavbarChild(name) {
 function loadBody() {
     const content = document.querySelector("#content");
     const main = document.createElement("section");
-    const h2 = document.createElement("h2");
-    const h4 = document.createElement("h4");
-    h2.textContent = "The Best Pizza in Town!"
-    h4.textContent = "Tasty AND Affordable."
-    main.appendChild(h2);
-    main.appendChild(h4);
-    content.appendChild(main); 
+    main.classList.add("main");
+    content.appendChild(main);
+    loadHomePage();
 }
 
 function loadFooter() {
@@ -52,4 +52,29 @@ function loadFooter() {
     footer.textContent = "Copyright © Peepachu";
 
     content.appendChild(footer);
+}
+
+function setLinks() {
+    const homeLink = document.querySelector(".Home");
+    const menuLink = document.querySelector(".Menu");
+    const contactLink = document.querySelector(".Contact");
+
+    contactLink.addEventListener('click', () => {
+        setActive(contactLink);
+        loadContact();
+    });
+    homeLink.addEventListener('click', () => {
+        setActive(homeLink);
+        loadHomePage();
+    });
+    menuLink.addEventListener('click', () => {
+        setActive(menuLink);
+        loadMenu();
+    });
+    console.log("this is working!");
+}
+
+function setActive(button) {
+    const navLink = document.querySelector("nav ul");
+    console.log(navLink);
 }
