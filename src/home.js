@@ -23,7 +23,7 @@ function createheroTextSection() {
 
     heroHeading.textContent = "Even the pickiest burger lovers eat here.";
     heroInfo.textContent = "We craft fresh, tasty and locally sourced eats that no food enthusiast can resist.";
-    orderButton.textContent = "Order Now!";
+    orderButton.textContent = "ORDER NOW";
 
     heroTextSection.classList.add("text");
     textContainer.classList.add("container");

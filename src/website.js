@@ -5,7 +5,6 @@ import { loadMenu } from "./menu.js";
 export function loadMainContent() {
     loadHeader();
     loadBody();
-    loadFooter();
 }
 
 function loadHeader() {
@@ -44,14 +43,6 @@ function loadBody() {
     main.classList.add("main");
     content.appendChild(main);
     loadHomePage();
-}
-
-function loadFooter() {
-    const content = document.querySelector("#content");
-    const footer = document.createElement("footer");
-    footer.textContent = "Copyright © Peepachu";
-
-    content.appendChild(footer);
 }
 
 function setLinks() {
