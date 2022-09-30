@@ -5,16 +5,31 @@ export function loadHomePage() {
     const hero = document.createElement("section");
     hero.classList.add("hero");
 
-    const heroMainHeading = document.createElement("h1");
-    heroMainHeading.textContent = "Even the pickiest burger lovers eat here.";
-    const heroMainInfo = document.createElement("p");
-    heroMainInfo.textContent = "We craft fresh, tasty and locaclly sourced eats that no food enthusiast can resist.";
-    const heroText = document.createElement("section");
-    const heroImage = document.createElement("img");
+    const heroTextSection = createheroTextSection();
 
-    heroText.appendChild(heroMainHeading);
-    heroText.appendChild(heroMainInfo);
-    hero.appendChild(heroText);
-    hero.appendChild(heroImage);
+    const heroImage = document.createElement("section");
+    heroImage.classList.add("image");
+
+    hero.append(heroTextSection, heroImage);
     main.appendChild(hero);
+}
+
+function createheroTextSection() {
+    const heroTextSection = document.createElement("section");
+    const textContainer = document.createElement("div");
+    const heroHeading = document.createElement("h1");
+    const heroInfo = document.createElement("p");
+    const orderButton = document.createElement("button");
+
+    heroHeading.textContent = "Even the pickiest burger lovers eat here.";
+    heroInfo.textContent = "We craft fresh, tasty and locally sourced eats that no food enthusiast can resist.";
+    orderButton.textContent = "Order Now!";
+
+    heroTextSection.classList.add("text");
+    textContainer.classList.add("container");
+
+    textContainer.append(heroHeading, heroInfo, orderButton);
+    heroTextSection.appendChild(textContainer);
+
+    return heroTextSection;
 }
