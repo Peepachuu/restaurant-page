@@ -3,13 +3,21 @@
     margin: 0px;
 }
 
+
+:root {
+    --main-color: rgb(245, 235, 220);
+    --secondary-color: rgb(80, 35, 20);
+    --ternary-color: rgb(214, 35, 0);
+}
+
 body, html, #content {
     height: 100%;
-
 }
+
 body {
-    font-family:'Courier New', Courier, monospace;
-    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secondary-color);
+    background-color: var(--main-color);
 }
 
 #content {
@@ -18,20 +26,30 @@ body {
 }
 
 #content .hero {
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background-color: var(--main-color);
+}
+
+#content .hero .image {
+    background-image: url("images/burgerunsplash.jpg");
+    background-size: cover;
+    flex: 1;
 }
 
 header {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+    background-color: var(--main-color);
 }
 
-h1 {
+header h1 {
     font-size: 4rem;
     padding: 12px;
     margin-left: 12px;
+    color:var(--ternary-color);
 }
 
 header ul {
@@ -42,8 +60,32 @@ header ul {
 }
 
 header button {
-    color: white;
+    color: var(--secondary-color);
+    font-weight: 700;
+    background-color: transparent;
+    border: transparent;
     font-size: 2rem;
+}
+
+.hero .text {
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}
+
+.hero .text .container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+}
+.hero h1 {
+    font-size: 6rem;
+}
+
+.hero button {
+    align-self: flex-start;
 }
 
 footer {
