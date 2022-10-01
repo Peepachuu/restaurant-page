@@ -5,27 +5,40 @@ import {emailIcon} from "./email.svg";
 export function loadContact() {
     const main = document.querySelector(".main");
     main.textContent = "";
-    const h2 = document.createElement("h2");
-    h2.textContent = "Contact Us";
-    
-    const info = createInfo("This is the info");
-
-    main.appendChild(h2);
-    main.appendChild(info);
+    const contactSecion = createContactSection();
+    main.appendChild(contactSecion);
 }
 
-function createInfo(info) {
-    const container = document.createElement("div");
-    const p = document.createElement("p");
-    const iconImg = document.createElement("img");
+function createContactSection() {
+    const contactSection = document.createElement("section");
 
-    iconImg.src = locationIcon;
-    iconImg.style.height = "24px";
-    iconImg.style.width = "24px";
-    p.textContent = info;
+    const heading = document.createElement("h1");
+    heading.textContent = "CONTACT US";
 
-    container.appendChild(iconImg);
-    container.appendChild(p);
+    const firstLocCard = createLocationCard("BlOODCOURT", "940 BLOOR ST W", "416-901-8166");
+    const secondLocCard = createLocationCard("KENSINGTON", "326 COLLEGE ST", "416-920-3647");
+    const thirdLocCard = createLocationCard("QUEEN WEST", "453 QUEEN ST W", "647-347-3647");
+    const forthLocCard = createLocationCard("AVENUE ROAD", "1507 AVENUE RD", "416-781-4747");
 
-    return container;
+    contactSection.append(heading, firstLocCard, secondLocCard, thirdLocCard, forthLocCard);
+    return contactSection;
+}
+
+function createLocationCard(neighbourhood, street, telephoneNumber) {
+    const locationCard = document.createElement("section");
+    const locNeighbourhood = document.createElement("h3");
+    const locStreet = document.createElement("h3");
+    const locTelephoneNumber = document.createElement("p");
+
+    locNeighbourhood.textContent = neighbourhood;
+    locStreet.textContent = street;
+    locTelephoneNumber.textContent = telephoneNumber;
+
+    locationCard.classList.add("location");
+    locNeighbourhood.classList.add("neighbourhood");
+    locStreet.classList.add("street");
+    locTelephoneNumber.classList.add("phone");
+
+    locationCard.append(locNeighbourhood, locStreet, locTelephoneNumber);
+    return locationCard;
 }
