@@ -104,3 +104,29 @@ header button:hover {
     border: transparent;
     border-radius: 12px;
 }
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact h1 {
+    font-size: 5rem;
+}
+
+.contact .container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 8px;
+}
+
+.contact .location {
+    border: 4px solid var(--secondary-color);
+    text-align: center;
+}
+
+.contact .location h3 {
+    font-size: 3rem;
+}

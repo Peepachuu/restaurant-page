@@ -20,7 +20,12 @@ function createContactSection() {
     const thirdLocCard = createLocationCard("QUEEN WEST", "453 QUEEN ST W", "647-347-3647");
     const forthLocCard = createLocationCard("AVENUE ROAD", "1507 AVENUE RD", "416-781-4747");
 
-    contactSection.append(heading, firstLocCard, secondLocCard, thirdLocCard, forthLocCard);
+    const locations = document.createElement("div");
+    locations.append(firstLocCard, secondLocCard, thirdLocCard, forthLocCard);
+    locations.classList.add("container");
+
+    contactSection.append(heading, locations);
+    contactSection.classList.add("contact");
     return contactSection;
 }
 
