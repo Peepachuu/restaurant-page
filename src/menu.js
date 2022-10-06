@@ -18,3 +18,19 @@ function createInfoSection() {
     infoSection.append(heading, info);
     return infoSection;
 }
+
+function createFoodCards(name, calories, description) {
+    const foodName = document.createElement("h3");
+    foodName.textContent = name;
+
+    const calInfo = document.createElement("p");
+    calInfo.textContent = calories;
+
+    const foodDescription = document.createElement("p");
+    foodDescription.textContent = description;
+
+    const foodCard = document.createElement("div");
+    foodCard.append(foodName, calInfo, foodDescription);
+    
+    return foodCard;
+}
