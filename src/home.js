@@ -1,4 +1,4 @@
-import img from "./images/burgerunsplash.jpg";
+import img from "./burgerunsplash.jpg";
 
 export function loadHomePage() {
     const main = document.querySelector("section");
