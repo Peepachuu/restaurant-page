@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 
@@ -10,17 +11,18 @@
     --ternary-color: #ecad2f;
 }
 
-body, html, #content {
-    height: 100%;
-}
+
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--secondary-color);
     background-color: var(--main-color);
+    min-height: 100vh;
+    max-width: 100vw;
 }
 
 #content {
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr;
 }
@@ -28,14 +30,13 @@ body {
 #content .hero {
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     background-color: var(--main-color);
 }
 
-#content .hero .image {
-    background-image: url("images/burgerunsplash.jpg");
-    background-size: cover;
-    flex: 1;
+.hero img {
+    width: 100%;
+    height: auto;
 }
 
 header {
@@ -46,7 +47,7 @@ header {
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     padding: 12px;
     margin-left: 12px;
     color:var(--ternary-color);
@@ -64,7 +65,7 @@ header button {
     font-weight: 700;
     background-color: transparent;
     border: transparent;
-    font-size: 2rem;
+    font-size: 1.25rem;
 }
 
 header button:hover {
@@ -74,7 +75,7 @@ header button:hover {
 .hero .text {
     display: grid;
     place-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .hero .text .container {
@@ -82,27 +83,30 @@ header button:hover {
     display: flex;
     flex-direction: column;
     gap: 64px;
-
+    padding-left: 16px;
 }
+
 .hero h1 {
-    font-size: 6rem;
+    font-size: 4rem;
 }
 
 .hero p {
     font-weight: 600;
+    max-width: 40ch;
 }
 
 .hero button {
     align-self: flex-start;
-    width: 300px;
+    width: 250px;
     height: 70px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 900;
     background: white;
     color: var(--secondary-color);
     background-color: var(--ternary-color);
     border: transparent;
     border-radius: 12px;
+    margin-bottom: 32px;
 }
 
 .contact {
@@ -112,21 +116,32 @@ header button:hover {
 }
 
 .contact h1 {
-    font-size: 5rem;
+    font-size: 4rem;
+    padding: 8px;
 }
 
 .contact .container {
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
 }
 
 .contact .location {
+    display: flex;
+    flex-direction: column;
     border: 4px solid var(--secondary-color);
+    min-height: 250px;
     text-align: center;
 }
 
 .contact .location h3 {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    padding: 12px 0px;
+}
+
+.contact .location .neighbourhood {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
 }
