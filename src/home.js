@@ -1,3 +1,5 @@
+import img from "./images/burgerunsplash.jpg";
+
 export function loadHomePage() {
     const main = document.querySelector("section");
     main.textContent = "";
@@ -7,7 +9,7 @@ export function loadHomePage() {
 
     const heroTextSection = createheroTextSection();
 
-    const heroImage = document.createElement("section");
+    const heroImage = createHeroImageSection();
     heroImage.classList.add("image");
 
     hero.append(heroTextSection, heroImage);
@@ -32,4 +34,11 @@ function createheroTextSection() {
     heroTextSection.appendChild(textContainer);
 
     return heroTextSection;
+}
+
+function createHeroImageSection() {
+    const heroImageSection = document.createElement("section");
+    const heroImage = document.createElement("img");
+    heroImage.src = img;
+    return heroImage;
 }
